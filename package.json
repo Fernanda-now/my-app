@@ -3,18 +3,49 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.6.1",
+    "@testing-library/react": "9.3.2",
+    "firebase": "7.3.0",
+    "moment": "^2.24.0",
+    "node-sass": "4.13.0",
+    "prop-types": "15.7.2",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
+    "react-icons": "^3.8.0",
     "react-scripts": "3.2.0"
+    
+  },
+  "devDependencies": {
+    "@testing-library/react": "9.3.2",
+    "nodemon": "^1.19.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --watchAll",
     "eject": "react-scripts eject"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/index.js",
+      "!src/firebase.prod.js",
+      "!src/hooks/*.js",
+      "!src/context/*.js"
+    ],
+
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 90,
+        "lines": 90,
+        "statements": 90
+      }
+    },
+    "coverageReporters": [
+      "html",
+      "text"
+    ]
   },
   "browserslist": {
     "production": [
@@ -27,5 +58,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC"
 }
